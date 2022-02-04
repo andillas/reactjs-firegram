@@ -1,11 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {collection, getDocs} from 'firebase/firestore';
+import {projectFirestore} from '../firebase/config';
 
 const Title = () => {
+
+useEffect(()=>{
+  const obtenerDatos = async ()=>{
+    const datos = await getDocs(collection(projectFirestore, "usuarios"));
+    datos.forEach(col => {
+      console.log(col.data())
+    })
+    
+  }
+  //obtenerDatos();
+}, [])
+
+
   return (
     <div className="title">
       <h1>FireGram</h1>
-      <h2>Picture Gallery</h2>
-      <p>This is just the place where will be shown your pictures.</p>
+      <h2>Your Pictures</h2>
+      <p>These are your pictures. Enjoy'em.</p>
     </div>
   )
 }

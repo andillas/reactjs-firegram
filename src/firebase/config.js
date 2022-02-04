@@ -1,10 +1,10 @@
-/*
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDyZ4He8dwb4J4uMXdonEpFqH0tO28kqyA",
   authDomain: "ninja-firegram-b4c0c.firebaseapp.com",
@@ -16,4 +16,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-*/
+
+const projectFirestore = getFirestore(app);
+const projectStorage = getStorage(app);
+
+export { projectFirestore, projectStorage };
+
