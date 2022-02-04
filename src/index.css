@@ -50,10 +50,12 @@ label{
   color: var(--primary);
   font-weight: bold;
   font-size: 24px;
+  box-shadow: inset -2px -3px 7px var(--primary);
 }
 label:hover{
   background: var(--primary);
   color: white;
+  box-shadow: inset -2px -3px 17px white;
 }
 .output{
   height: 60px;

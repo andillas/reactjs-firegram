@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
-import {collection, getDocs} from 'firebase/firestore';
-import {projectFirestore} from '../firebase/config';
+import React, {/*useEffect*/} from 'react';
+//import {collection, getDocs} from 'firebase/firestore';
+//import {projectFirestore} from '../firebase/config';
 
 const Title = () => {
-
+/*
 useEffect(()=>{
   const obtenerDatos = async ()=>{
     const datos = await getDocs(collection(projectFirestore, "usuarios"));
@@ -14,7 +14,7 @@ useEffect(()=>{
   }
   //obtenerDatos();
 }, [])
-
+*/
 
   return (
     <div className="title">
