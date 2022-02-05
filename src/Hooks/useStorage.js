@@ -1,7 +1,7 @@
 /* eslint-disable default-case */
 import { useState, useEffect } from "react";
 import { projectStorage, projectFirestore } from '../firebase/config';
-import { ref, uploadBytes, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 const useStorage = (file) => {
@@ -42,7 +42,7 @@ const useStorage = (file) => {
                     try {
                         addDoc(collection(projectFirestore, "imagenes"), {
                           url: downloadURL,
-                          createdAt: Timestamp.now().toDate()
+                          createdAt: Timestamp.now()
                         }).then((t) =>{
                             console.log(t.id)
                             console.log(t);
@@ -54,26 +54,6 @@ const useStorage = (file) => {
             })
         }
         )
-
-        /*
-        uploadBytes(storageRef, file).then((snapshot) => {
-            console.log('Uploaded a blob or file!');
-          });
-        */
-/*
-        //const storageRefFile = storageRef(file.name);
-        storageRef.put(file).on('state_changed', (snap) => {
-            let percentage = (snap.bitesTransferred / snap.totalBytes) * 100;
-            setProgress(percentage);
-
-        }, (err) => {
-            setError(err)
-        }, async () => {
-            const dwnUrl = await storageRef.getDownloadURL();  
-            setUrl(dwnUrl);
-        })
-
-        */
     }, [file]);
 
     return { progress, url, error}

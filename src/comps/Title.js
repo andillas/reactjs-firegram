@@ -18,7 +18,7 @@ useEffect(()=>{
 
   return (
     <div className="title">
-      <h1>FireGram</h1>
+      <h1>AndiGram</h1>
       <h2>Your Pictures</h2>
       <p>These are your pictures. Enjoy'em.</p>
     </div>
