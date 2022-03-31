@@ -1,5 +1,7 @@
 import React from "react";
-import {motion} from 'framer-motion/dist/framer-motion';
+//import {motion} from 'framer-motion/dist/framer-motion';
+//import {motion} from 'framer-motion/dist/es/index';
+import { motion } from 'framer-motion';
 
 
 const Modal = ({imageUrl, closeModal}) => {

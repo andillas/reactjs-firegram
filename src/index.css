@@ -10,15 +10,16 @@
   --lobster : 'Lobster Two';
   --syne : 'Syne Tactile';
   --supermercado : 'Supermercado One';
+  --trebu : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* base styles & title */
 body{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: var(--trebu);
   color: var(--secondary);
 }
 .App{
-  max-width: 960px;
+  max-width: 30%;
   margin: 0 auto;
 }
 .title h1{
@@ -27,13 +28,29 @@ body{
   font-size: 1.7rem;
   font-weight: bold;
 }
+.title button{
+    float: right;
+    padding: 4px 17px;
+    border-radius: 8px;
+    background-color: white;
+    color: var(--primary);
+    border: 2px solid var(--primary); /* Green */
+}
+.title button:hover{
+    background-color: white;
+    color: var(--secondary);
+    border: 2px solid var(--secondary); /* Green */
+}
 .title h2, .title p{
-  font-family: var(--supermercado);
   text-align: center;
 }
 .title h2{
-  margin-top: 60px;
-  font-size: 2.6rem;
+    font-family: var(--supermercado);
+  margin: 100px 0 0 0;
+  font-size: 2.1rem;
+}
+.title p{
+    margin: 0px;
 }
 
 /* upload form styles */
@@ -83,8 +100,8 @@ label:hover{
 .img-grid{
   margin: 20px auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 40px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 .img-wrap{
   overflow: hidden;
@@ -92,7 +109,7 @@ label:hover{
   padding: 50% 0;
   /* padding controls height, will always be perfectly square regardless of width */
   position: relative;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 .img-wrap img{
   min-width: 100%;
@@ -101,6 +118,18 @@ label:hover{
   position: absolute;
   top: 0;
   left: 0;
+}
+.hjk{
+   position:absolute;
+   z-index: 2;
+   top: 0px;
+   left: 0px;
+}
+.delete{
+    width: 35px;
+    height: 25px;
+    float: left;
+    display: grid;
 }
 
 /* modal styles */

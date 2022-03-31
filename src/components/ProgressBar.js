@@ -1,11 +1,13 @@
 import React from 'react';
 import { useEffect } from 'react';
 import useStorage from '../hooks/useStorage';
-import {motion} from 'framer-motion/dist/framer-motion';
+//import {motion} from 'framer-motion/dist/framer-motion';
+//import {motion} from 'framer-motion/dist/es/index'
+import { motion } from 'framer-motion';
 
 const ProgressBar = ({file, setFile}) => {
     const { progress, url } = useStorage(file);
-    console.log(progress, url);
+    //console.log(progress, url);
 
     //hook para ocultar la barra de progreso:
     //dado que sólo se muestra cuando hay un "file", se setea a null 

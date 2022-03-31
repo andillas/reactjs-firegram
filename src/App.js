@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import ImageGrid from './comps/ImageGrid';
-import Modal from './comps/Modal';
-import Title from './comps/Title';
-import UploadForm from './comps/UploadForm';
+import ImageGrid from './components/ImageGrid';
+import Modal from './components/Modal';
+import Title from './components/Title';
+import UploadForm from './components/UploadForm';
+import { LoginProvider } from './contexts/loginCtxt';
 
 function App() {
-  const [imageUrl, setImageUrl] = useState(null)  
 
   return (
-    <div className="App">
-      <Title/>
-      <UploadForm />
-      <ImageGrid setImageUrl={setImageUrl}/>
-      { imageUrl && <Modal imageUrl={imageUrl} closeModal={ setImageUrl }/> }
-    </div>
+      <div className="App">
+            <LoginProvider>
+                <Title/>
+                <UploadForm />
+                <ImageGrid/>
+            </LoginProvider>
+        </div>
   );
 }
 
